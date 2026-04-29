@@ -30,7 +30,6 @@ if tokenizer.pad_token is None:
     tokenizer.pad_token = tokenizer.eos_token
 
 print("Loading Phi-3 3.8B from cache (Native HF Implementation)...")
-# REMOVED trust_remote_code=True to prevent the KeyError crash
 model = AutoModelForCausalLM.from_pretrained(
     model_name,
     torch_dtype=torch.float16,
