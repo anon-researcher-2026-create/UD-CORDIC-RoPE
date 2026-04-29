@@ -23,7 +23,6 @@ print("Using device:", device)
 # =========================================================
 model_name = "google/gemma-2-9b"
 
-# 🚨 PASTE YOUR HUGGING FACE TOKEN HERE 🚨
 MY_HF_TOKEN = "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"
 
 print(f"Loading tokenizer for {model_name}...")
@@ -112,16 +111,16 @@ def compute_perplexity_continuous(model, tokenizer, dataset, desc):
         
         input_ids = encodings.input_ids[:, begin_loc:end_loc].to("cuda:0")
         
-        # 🚨 THE GEMMA FIX: Force BOS token at the start of the window
+        
         input_ids[:, 0] = 2 
         
         target_ids = input_ids.clone()
-        # 🚨 THE MASKING FIX: Don't calculate loss on the context overlap
+        
         target_ids[:, :-trg_len] = -100 
         
         with torch.no_grad():
             outputs = model(input_ids, labels=target_ids)
-            # Multiply by trg_len to weight the average correctly later
+            
             neg_log_likelihood = outputs.loss * trg_len
             nlls.append(neg_log_likelihood.item())
             
