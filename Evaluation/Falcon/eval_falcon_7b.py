@@ -30,7 +30,7 @@ if tokenizer.pad_token is None:
     tokenizer.pad_token = tokenizer.eos_token
 
 print("Loading Falcon-7b from cache (Native HF Implementation)...")
-# REMOVED trust_remote_code=True so it uses the modern, bug-free architecture
+
 model = AutoModelForCausalLM.from_pretrained(
     model_name,
     torch_dtype=torch.float16,
@@ -66,7 +66,6 @@ def cordic_rope(q, k, cos, sin, unsqueeze_dim=1, std_dev=0.01):
     k_embed = (k * c_approx) + (rotate_half(k) * s_approx)
     return q_embed, k_embed
 
-# Global variable to hold ("mode_name", fractional_bits)
 CURRENT_MODE = "float"
 
 def patched_rope(q, k, cos, sin, *args, **kwargs):
@@ -76,13 +75,11 @@ def patched_rope(q, k, cos, sin, *args, **kwargs):
     mode_name, frac_bits = CURRENT_MODE
     u_dim = kwargs.get("unsqueeze_dim", 1)
 
-    # Calculate exact error margins based on hardware architecture
     if mode_name == "binary":
         max_error = 1.216 * (2 ** -frac_bits)
     elif mode_name == "csd":
         max_error = 1.024 * (2 ** -frac_bits)
 
-    # Convert max error to a 3-sigma standard deviation for Gaussian noise
     std_dev = max_error / 3
 
     return cordic_rope(q, k, cos, sin, unsqueeze_dim=u_dim, std_dev=std_dev)
@@ -103,7 +100,6 @@ def compute_perplexity_continuous(model, tokenizer, dataset, desc):
     encodings = tokenizer(full_text, return_tensors="pt")
     seq_len = encodings.input_ids.size(1)
     
-    # REDUCED CONTEXT WINDOW TO PREVENT VRAM OOM CRASH
     max_length = 1024 
     nlls = []
     
@@ -117,11 +113,10 @@ def compute_perplexity_continuous(model, tokenizer, dataset, desc):
         
         with torch.no_grad():
             outputs = model(input_ids, labels=target_ids)
-            # Use .item() to immediately pull the float out of the GPU VRAM
             neg_log_likelihood = outputs.loss.item() * trg_len
             nlls.append(neg_log_likelihood)
             
-        # Free up memory aggressively between loops
+
         del input_ids, target_ids, outputs
         torch.cuda.empty_cache()
             
