@@ -1,0 +1,51 @@
+
+
+Working Directory = /home/redhatacademy19/Documents/Siddhant/RUN/BINARY UD 10 Stages_Multiple Lib_Fast Cells/9
+QoS Summary for rope_binary_ud_pair
+================================================================================
+Metric                          generic         mapped          opt            
+================================================================================
+Slack (ps):                     1,607           1,514           1,514
+  R2R (ps):                     1,607           1,514           1,514
+  I2R (ps):                     1,777           1,721           1,639
+  R2O (ps):                     1,753           1,767           1,767
+  I2O (ps):                  no_value        no_value        no_value
+  CG  (ps):                  no_value        no_value        no_value
+TNS (ps):                           0               0               0
+  R2R (ps):                         0               0               0
+  I2R (ps):                         0               0               0
+  R2O (ps):                         0               0               0
+  I2O (ps):                  no_value        no_value        no_value
+  CG  (ps):                  no_value        no_value        no_value
+Failing Paths:                      0               0               0
+Cell Area:                      8,380           3,749           3,666
+Total Cell Area:                8,380           3,749           3,666
+Leaf Instances:                 2,389           1,329           1,313
+Total Instances:                2,389           1,329           1,313
+Utilization (%):                 0.00            0.00            0.00
+Tot. Net Length (um):        no_value        no_value        no_value
+Avg. Net Length (um):        no_value        no_value        no_value
+Route Overflow H (%):        no_value        no_value        no_value
+Route Overflow V (%):        no_value        no_value        no_value
+MBCI(%) (bits/gate) :            0.00            0.00            0.00
+Norm Cong Hotspot Area:
+  Max Cong:                  no_value        no_value        no_value
+  Tot Cong:                  no_value        no_value        no_value
+================================================================================
+CPU  Runtime (h:m:s):        00:30:13        00:30:07        00:30:02
+Real Runtime (h:m:s):        00:30:19        00:30:06        00:30:02
+CPU  Elapsed (h:m:s):        00:30:15        00:30:22        00:30:24
+Real Elapsed (h:m:s):        00:30:20        00:30:26        00:30:28
+Memory (MB):                  1673.89         1739.46         1706.46
+================================================================================
+================================================================================
+Flow Settings:
+================================================================================
+Total Runtime (h:m:s): 00:30:28
+Total Memory (MB):     1706.46
+Executable Version:    21.10-p002_1
+================================================================================
+Total Cell Area =  Cell Area + Physical Cell Area
+Total Instances =  Leaf Instances + Physical Instances
+
+
