@@ -1,12 +1,12 @@
 
 
-Working Directory = /home/redhatacademy19/Documents/Siddhant/RUN/7 frac bits/8 stages/standard
+Working Directory = /home/redhatacademy19/Documents/Siddhant/RUN/7 frac bits/10 stages/standard
 QoS Summary for rope_cordic_pair
 ================================================================================
 Metric                          generic         mapped         
 ================================================================================
 Slack (ps):                     1,506           1,381
-  R2R (ps):                     1,659           1,574
+  R2R (ps):                     1,659           1,557
   I2R (ps):                     1,506           1,381
   R2O (ps):                     1,753           1,766
   I2O (ps):                  no_value        no_value
@@ -18,10 +18,10 @@ TNS (ps):                           0               0
   I2O (ps):                  no_value        no_value
   CG  (ps):                  no_value        no_value
 Failing Paths:                      0               0
-Cell Area:                      6,647           2,778
-Total Cell Area:                6,647           2,778
-Leaf Instances:                 1,992           1,063
-Total Instances:                1,992           1,063
+Cell Area:                      7,857           3,298
+Total Cell Area:                7,857           3,298
+Leaf Instances:                 2,350           1,282
+Total Instances:                2,350           1,282
 Utilization (%):                 0.00            0.00
 Tot. Net Length (um):        no_value        no_value
 Avg. Net Length (um):        no_value        no_value
@@ -32,17 +32,17 @@ Norm Cong Hotspot Area:
   Max Cong:                  no_value        no_value
   Tot Cong:                  no_value        no_value
 ================================================================================
-CPU  Runtime (h:m:s):        00:30:15        00:30:06
-Real Runtime (h:m:s):        00:30:25        00:30:05
-CPU  Elapsed (h:m:s):        00:30:17        00:30:23
-Real Elapsed (h:m:s):        00:30:26        00:30:31
-Memory (MB):                  1516.13         1579.53
+CPU  Runtime (h:m:s):        00:30:17        00:30:07
+Real Runtime (h:m:s):        00:31:09        00:30:05
+CPU  Elapsed (h:m:s):        00:30:19        00:30:26
+Real Elapsed (h:m:s):        00:31:10        00:31:15
+Memory (MB):                  1515.12         1578.16
 ================================================================================
 ================================================================================
 Flow Settings:
 ================================================================================
-Total Runtime (h:m:s): 00:30:30
-Total Memory (MB):     1587.54
+Total Runtime (h:m:s): 00:31:14
+Total Memory (MB):     1586.16
 Executable Version:    21.10-p002_1
 ================================================================================
 Total Cell Area =  Cell Area + Physical Cell Area

@@ -1,7 +1,7 @@
 ################################################################################
 #
 # Init setup file
-# Created by Genus(TM) Synthesis Solution on 04/27/2026 22:22:32
+# Created by Genus(TM) Synthesis Solution on 04/27/2026 22:23:45
 #
 ################################################################################
 if { ![is_common_ui_mode] } { error "ERROR: This script requires common_ui to be active."}
